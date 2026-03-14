@@ -1,5 +1,25 @@
 # Hekenic Shpre (F1E00 - F1EFF)
 
+For ease of cross-reference with the [Laghari Portals website's documentation on the Hekenic languages](https://www.laghariportals.com/hekenic), parts of this proposal are phrased and referred to as if it is referring to real world times events that happened, rather than happening within the lore and worldbuilding of Laghari Portals (it's also just a bit of fun).
+
+It is recommended to at minimum go through the "Writing" section of the Laghari Portals documentaton on the Hekenic languages as a rough overview to know what to expect, however this document in places goes into more detail than the Laghari Portals website.
+
+This proposal was primarily written by [Beyley Cardellio](https://beyleyisnot.moe/), with input from [Cyan](https://cyan.pet/), [ZeWei](https://www.zewei.xyz/) (the creator of the Shpre/Hekenic family of languages, these scripts, and Laghari Portals as a whole), and various others from the [Laghari Portals discord server](https://discord.gg/zewei).
+
+## The Hekenic Languages
+
+The Hekenic languages (known in Neptunian as Shpre, these terms are interchangable in this document) are a group of languages spoken in Dimension 66A. They're located on a large archipelago, have a common ancestor (Old Hekenic), and share similarities with eachother. While Nahnya (for Neptunian, Shpre Yhng), Nävein (for Martian, Shpre Nang), and Nunye (Modern Solar, Shpre Nya) all share a common ancestor writing system (a logography that is no longer used), they've diverged from each-other quite strongly, and all function very differently by the time of the Laghari Portals website documentation of the languages (October 2106). Äfubes is a much later invention for Future Solar, being standardized in 2191. The iteration of the Äfubes documented here is from October 2399.
+
+There are more dialects of Shpre that exist, and more related scripts, but these do not have public documentation as of now (and are not complete usable languages being used by the community for content, unlike the currently documented Shpre dialects), and so are not included in this proposal. Earlier evolutions of the scripts from before October 2106 are also not included, due to not being documented in full. This proposal is a snapshot of how the scripts are actively used at the time the Laghari Portals website was written and the Laghari Portals ;; Worlds Tour videos take place.
+
+Outside of the lore, these languages are being used actively by the community for content, and having a dedicated unicode block allows us to use these langauges within chat platforms such as Discord to communciate with each-other and more easily practice them, since there are multiple people learning to speak dialects of Shpre.
+
+Some examples of public content outside Discord using Shpre:
+
+- [Laghari Calendars](https://laghari.beyleyisnot.moe/) - An implementation of the native Hekenic calendar. This would benefit from being able to mix the dialects of Shpre without having to change fonts constantly. A more modern rewrite available at [Beyley/liblaghari](https://github.com/Beyley/liblaghari), which also contains basic i18n tools for languages from Laghari Portals (Shpre included), and code to work with the Laghari Portals calendars and time systems.
+- [PEAK Neptunian](https://github.com/Beyley/PeakNeptunian) - A mod of the game PEAK which localizes the game into Neptunian. As of writing, the localization is ~50% complete. Being able to mix Neptunian and Latin characters is required to allow putting player usernames into strings right next to Neptunian text.
+- [myepraht](https://github.com/Beyley/myepraht) - A clone of Letroso for Neptunian, with hints based on the Nahnya syllabary, rather than the romanization of the words in question, so is tied quite strongly to the script itself.
+
 ## Nahnya
 
 The Neptunian syllabary, known locally as "Nahnya" (lit. Syllabary) is a mostly-pure syllabary, mapping almost 1:1 with the spoken sounds of the language, aside from syllable-final characters which are written separately. The character shapes are directly derived from an ancient logography, so there's not a pattern to derive the shapes of most characters.
