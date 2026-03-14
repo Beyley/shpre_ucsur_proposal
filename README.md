@@ -10,13 +10,13 @@ Nahnya has three levels of punctuation, Short, Medium, and Long. These are rough
 
 Traditionally, Nahnya is written without spaces, however doing so is more common as of 2106 due to influence from nearby languages and from English.
 
-The syllables are encoded in the traditional ordering of the characters, so to sort two characters, you only have to compare the numeric values of the codepoints earlier codepoints go earlier when sorting.
+The syllables are encoded in the traditional ordering of the characters, to allow numerical codepoint sorting to match the expected order by speakers of the language.
 
 ### Exepctions
 
 As an exception to that, the `R` onset syllables are formed by adding a "silencer mark" to the respective `D` onset syllables. The position of the silencer mark is different per character, and linguistically it makes more sense to analyze these as separate characters. The silencer mark is the same as a "short" punctuation.
 
-The pairs `P/B`, `F/V`, `K/G`, and (syllabic `H`) `H/AH` are considered allophonic to each-other, so no distinction is made in the writing system. Some sounds are written the same as other characters, since dedicated glyphs do not exist, the glyphs in question are listed below.
+The pairs `P/B`, `F/V`, `K/G`, and (syllabic `-H`) `-H/-AH` are considered allophonic to each-other, so no distinction is made in the writing system. Some sounds are written the same as other characters, since dedicated glyphs do not exist, the glyphs in question are listed below.
 
 - The syllable KYH is written as `NAHNYA SYLLABLE K, NAHNYA SYLLABLE YH` due to a lack of a character existing for that sound. This syllable is seen in words like `nwgyahk`.
 - `KI` is written `NGI`.
@@ -30,8 +30,8 @@ There are also a couple exceptions in the spelling, caused by language sound cha
 
 Some glyphs are also very similar to each-other, often written identically in handwriting, those pairs are listed here:
 
-- `FRAI` and `MYAI`.
-- `FRE` and `MYH`.
+- `FRAI` and `MYAI` are very similar, and are generally written the same in handwriting, but officially have different shapes.
+- `FRE` and `MYH` are [fully visually identical](https://discord.com/channels/1284943477984989258/1289355465658204210/1480365100211638303), but are [still analyzed as separate characters](https://discord.com/channels/1284943477984989258/1289355465658204210/1480367144536637612) (this matters when sorting characters), so they are encoded separately.
 
 Since some consonants do not have `-H` forms, so to write them on their own, other forms are used instead.
 
@@ -39,6 +39,8 @@ Since some consonants do not have `-H` forms, so to write them on their own, oth
 - `NG` is written as `NAHNYA SYLLABLE NGW, NAHNYA SIGN VIRAMA`
 
 ### Proposed encoding
+
+All text after `#` is considered errata for ease of understanding and is not part of the specification.
 
 ```
 U+F1E00 - NAHNYA SYLLABLE PE
@@ -153,12 +155,28 @@ U+F1E6C - NAHNYA SYLLABLE YH
 U+F1E6D - NAHNYA SYLLABLE NGI
 U+F1E6E - NAHNYA SYLLABLE NGW
 U+F1E6F - NAHNYA SIGN VIRAMA
-U+F1E70 - NAHNYA PUNCTUATION SHORT
+U+F1E70 - NAHNYA PUNCTUATION SHORT # This is visually the same glyph as the "Silencer Mark"
 U+F1E71 - NAHNYA PUNCTUATION MEDIUM
 U+F1E72 - NAHNYA PUNCTUATION LONG
 ```
 
 ## Nävein
+
+The Martian alphabet, known locally as "Nävein", has 17 letters and is non-phonetic in modern Martian, due to sound changes.
+
+Nävein has the same three levels of semantic punctuation as Nahnya, however they are written horizontally next to eachother as separate characters, rather than combined vertically as in Nahnya, and so longer pauses are encoded as multiple `NAVEIN PUNCTUATION` codepoints in direct sequence.
+
+Nävein is written with spaces, and has multiple optional stylistic characters for when there are geminiates or clusters with R and Y. These styilistic characters bear no meaning on the pronunciation of the characters, and are best thought of as standardized ligatures, so they are not encoded and are instead encouraged to be implemented using ligatures based on the preferences of the font maker. See the [Laghari Portals](https://www.laghariportals.com/hekenic) website for what combining characters are standardized.
+
+The letters are encoded in the traditional Nävein ordering, to allow numerical codepoint sorting to match alphabetical sorting. The codepoints are named after the standardized [names](https://discord.com/channels/1284943477984989258/1289355465658204210/1480325948753711186) for them. The reasoning for placing the role of the letter in the name is to disambiguate the vowel `pä` (`NAVEIN VOWEL LETTER PA`) from the consonant `pa` (`NAVEIN CONSONANT LETTER PA`) using only ASCII characters.
+
+### Exceptions
+
+While there are a lot of spelling exceptions inside Nävein, none are relevant to choices made when deciding the encoding itself, unlike Nahnya.
+
+### Proposed Encoding
+
+All text after `#` is errata and not part of the specification, it contains the sound this letter traditionally makes.
 
 ```
 U+F1E80 - NAVEIN CONSONANT LETTER PA # P
@@ -183,89 +201,143 @@ U+F1E91 - NAVEIN PUNCTUATION
 
 ## Nunye
 
-### Base consonant forms
+Nunye is best described as an Alphasyllabary, with base forms of consonants, marking vowels and certain clusters with diacritical marks. In some cases though, the diacritical marks have merged with the base character, leading to inconsistencies in the expected shapes for many letters. This document is encoding the form of Nunye as seen in 2106.
 
-Codepoints are named after their local names, but due to spelling still reflecting the historical pronunciations of words, it makes more sense when *spelling* words to analyze them as the sound in the comment, rather than the name of the consonant in modern Solar.
+### Exceptions
+
+Due to Nunye being standardized in the past during the time of Old Solar, when analyzed in it's written form it tends to resemble Neptunian more than it does Modern Solar, this leads to a lot of spelling and pronunciation inconsistencies.
+
+#### Added characters
+
+Some sounds were not present when Nunye was standardized, however have since appeared in Solar's pronunciation, these characters are as follows:
+
+- TI - `NUNYE CONSONANT TA, NUNYE VOWEL SIGN MI`
+- TU1 - `NUNYE CONSONANT TA, NUNYE VOWEL SIGN MW`
+- YI - `NUNYE CONSONANT YA, NUNYE VOWEL SIGN MI`
+
+These characters are still used in Modern Solar, but are often replaced by other letters due to being missing when spelling was standardized.
+
+Codepoints are named after their local names in Modern Solar.
+
+### Ordering
+
+Ordering in Nunye is not as simple as other scripts due to the composite nature of the script, however it is consistent and has a strict pattern. This does mean that a simple numerical codepoint ordering will *not* produce the standardized order expected of the script.
+
+When ordering, descenders are considered part of the base consonant and are treated in the following order:
+
+- `NUNYE CONSONANT 00, NUNYE VOWEL SIGN 00`
+- `NUNYE CONSONANT 00, NUNYE COMBINING DESCENDER R, NUNYE VOWEL SIGN 00`
+- `NUNYE CONSONANT 00, NUNYE COMBINING DESCENDER Y, NUNYE VOWEL SIGN 00`
+- `NUNYE CONSONANT 00, NUNYE VOWEL SIGN 01`
+- `NUNYE CONSONANT 00, NUNYE COMBINING DESCENDER R, NUNYE VOWEL SIGN 01`
+- `NUNYE CONSONANT 00, NUNYE COMBINING DESCENDER Y, NUNYE VOWEL SIGN 01`
+- `NUNYE CONSONANT 01, NUNYE VOWEL SIGN 00`
+- `NUNYE CONSONANT 01, NUNYE COMBINING DESCENDER R, NUNYE VOWEL SIGN 00`
+- `NUNYE CONSONANT 01, NUNYE COMBINING DESCENDER Y, NUNYE VOWEL SIGN 00`
+- `NUNYE CONSONANT 01, NUNYE VOWEL SIGN 01`
+- `NUNYE CONSONANT 01, NUNYE COMBINING DESCENDER R, NUNYE VOWEL SIGN 01`
+- `NUNYE CONSONANT 01, NUNYE COMBINING DESCENDER Y, NUNYE VOWEL SIGN 01`
+
+The order of the individual consonants and vowels is the same as present in the encoding, with the first consonants being `PA, MA, NA, ...` and the first vowels being `MI, MW, PA, ...`
+
+### Proposed Encoding
+
+All text after `#` represents the historical pronunciation when Nunye was standardized, and all text after `;` represents the name used on the [Laghari Portals](https://www.laghariportals.com/hekenic) website to describe this letter, if different. These are errata and are only present to aid in understanding, not part of the specification.
+
+#### Base consonant forms
 
 ```
-U+F1EA0 - NUNYE CONSONANT PA # P
+U+F1EA0 - NUNYE CONSONANT PA # P ; P / F
 U+F1EA1 - NUNYE CONSONANT MA # M
 U+F1EA2 - NUNYE CONSONANT NA # N
-U+F1EA3 - NUNYE CONSONANT TA # T
-U+F1EA4 - NUNYE CONSONANT KA # K
-U+F1EA5 - NUNYE CONSONANT A  # NG
+U+F1EA3 - NUNYE CONSONANT TA # T ; T / S
+U+F1EA4 - NUNYE CONSONANT KA # K ; K / H
+U+F1EA5 - NUNYE CONSONANT A  # NG ; - / NG
 U+F1EA6 - NUNYE CONSONANT HA # H
-U+F1EA7 - NUNYE CONSONANT FA # F
-U+F1EA8 - NUNYE CONSONANT DA # R
+U+F1EA7 - NUNYE CONSONANT FA # F ; F / vv
+U+F1EA8 - NUNYE CONSONANT DA # R ; D / S
 U+F1EA9 - NUNYE CONSONANT YA # Y
 ```
 
-### Vowel Signs
-
-Attached to consonants.
-
-Codepoints are named after local names, but due to historical spellings, when spelling words it makes more sense to analyze them as the sound in the comment, rather than the sound they make in modern Solar.
+#### Vowel Signs
 
 ```
 U+F1EAA - NUNYE VOWEL SIGN MI  # I
-U+F1EAB - NUNYE VOWEL SIGN MW  # W
+U+F1EAB - NUNYE VOWEL SIGN MU  # W ; U1
 U+F1EAC - NUNYE VOWEL SIGN PA  # Ä
 U+F1EAD - NUNYE VOWEL SIGN AMA # A
-U+F1EAE - NUNYE VOWEL SIGN PU  # E
-U+F1EAF - NUNYE VOWEL SIGN PE  # EI
-U+F1EB0 - NUNYE VOWEL SIGN MAE # AI
+U+F1EAE - NUNYE VOWEL SIGN PU  # E ; U2
+U+F1EAF - NUNYE VOWEL SIGN PE  # EI ; E
+U+F1EB0 - NUNYE VOWEL SIGN MAE # AI ; AE
 ```
 
-### Descenders
+#### Descenders
 
-Attached to consonants, but placed before vowels, these change the sound of the final syllable in unpredictable ways, but when analyizing the historical "spellings", breaks down to two being "spelled" as R (ex. frai) and Y (ex. nyai)
+Attached to consonants, and placed before vowels, these change the sound of the final syllable in unpredictable ways, but when analyzing the historical spellings, consistently adds the consonant to the onset. For example `NUNYE CONSONANT FA, NUNYE COMBINING DESCENDER R, NUNYE VOWEL SIGN MAE` is analyzed as the character `frai`, and `NUNYE CONSONANT MA, NUNYE COMBINING DESCENDER Y, NUNYE VOWEL SIGN MAE` is analyzed as the character `myai`.
 
 ```
 U+F1EB1 - NUNYE COMBINING DESCENDER R
 U+F1EB2 - NUNYE COMBINING DESCENDER Y
 ```
 
-### Punctuation
+#### Punctuation
+
+Nunye has the same three punctuations as Nahnya, and you can read about their usage above. Because the Nahnya punctuation glyph is anaylzed as the same glyph as the Silencer, the Nunye punctuation are encoded as separate codepoints rather than encoding a single shared `HEKENIC PUNCTUATION SHORT/MEDIUM/LONG` for both of them.
 
 ```
-U+F1EB3 - NUNYE PUNCTUATION SHORT # Similar in function to a comma, representing a short pause in a sentence
-U+F1EB4 - NUNYE PUNCTUATION MEDIUM # Similar in function to a period, representing a medium length pause, for breaking up sentences
-U+F1EB5 - NUNYE PUNCTUATION LONG # Similar in function to a newline, representing a long pause, for breaking up paragraphs
+U+F1EB3 - NUNYE PUNCTUATION SHORT
+U+F1EB4 - NUNYE PUNCTUATION MEDIUM
+U+F1EB5 - NUNYE PUNCTUATION LONG
 ```
 
 ## Äfubes
 
+The Future Solar alphabet, known locally as Äfubes, is a nearly-phonetic alphabet used to encode Future Solar, an evolution of Modern Solar from the year 2399, with heavy influence from English and the Latin Alphabet. One of it's main goals was to make it possible to write the script without ligatures, compared to Modern Solar which needs uses lots of them, so that usage on a computer is easier. This is reflected in the encoding, using one codepoint per letter.
+
+Äfubes has 28 letters officially, however there are 2 uncommon letters (that do see minor use) and so are included in the encoding, even if it is not standard practice to use these. They are listed as follows:
+
+- `AFUBES LETTER UU` - This is a long form of the of `U` vowel.
+- `AFUBES LETTER PAE` - Refer to the section on the [Pä-Pa-Pe Controversy](https://www.laghariportals.com/hekenic) on the Laghari Portals website for why this glyph was originally created.
+
+While characters like `PÄ`, `PAE`, `PA`, and `PE` are sometimes referred to as ligatures, their usage effects the ordering of words, and so are listed as separate codepoints, with the user's IME autocompleting them in when the user types the separate characters. Codepoints are all listed in their standard ordering, so sorting by codepoint will sort by letter.
+
+Some letters have multiple names, one for the native name, and one named loaned from English, this encoding uses the native name where possible, using loans to distinguish where not normally possible without the letter `Ä`.
+
+### Proposed Encoding
+
+All text after `#` or `;` is considered errata and is not part of the specification. It contains the sound the letter makes, for ease of understanding. All text after `;` is either an alternate name for this letter, or extra information.
+
 ```
-U+F1EC0 - AFUBES LETTER A
-U+F1EC1 - AFUBES LETTER AE
-U+F1EC2 - AFUBES LETTER Ä
-U+F1EC3 - AFUBES LETTER ÄÄ
-U+F1EC4 - AFUBES LETTER B
-U+F1EC5 - AFUBES LETTER CH
-U+F1EC6 - AFUBES LETTER D
-U+F1EC7 - AFUBES LETTER E
-U+F1EC8 - AFUBES LETTER EI
-U+F1EC9 - AFUBES LETTER F / U
-U+F1ECA - AFUBES LETTER G
-U+F1ECB - AFUBES LETTER H
-U+F1ECC - AFUBES LETTER I
-U+F1ECD - AFUBES LETTER II
-U+F1ECE - AFUBES LETTER J
-U+F1ECF - AFUBES LETTER K
-U+F1ED0 - AFUBES LETTER M
-U+F1ED1 - AFUBES LETTER N
-U+F1ED2 - AFUBES LETTER NG
-U+F1ED3 - AFUBES LETTER P
-U+F1ED4 - AFUBES LETTER RH
-U+F1ED5 - AFUBES LETTER S
-U+F1ED6 - AFUBES LETTER T
-U+F1ED7 - AFUBES LETTER U
-U+F1ED8 - AFUBES LETTER UU
-U+F1ED9 - AFUBES LETTER Z
-U+F1EDA - AFUBES LETTER PÄ
-U+F1EDB - AFUBES LETTER PAE
-U+F1EDC - AFUBES LETTER PA
-U+F1EDD - AFUBES LETTER PE
-U+F1EDE - AFUBES PUNCTUATION PERIOD
-U+F1EDF - AFUBES PUNCTUATION COMMA
+U+F1EC0 - AFUBES LETTER AMA # A ; EI
+U+F1EC1 - AFUBES LETTER MAE # AE
+U+F1EC2 - AFUBES LETTER PA # Ä ; PÄ
+U+F1EC3 - AFUBES LETTER PAA # ÄÄ ; PÄÄ
+U+F1EC4 - AFUBES LETTER PIS # B ; BI
+U+F1EC5 - AFUBES LETTER SI # CH
+U+F1EC6 - AFUBES LETTER DI # D
+U+F1EC7 - AFUBES LETTER PE # E ; II
+U+F1EC8 - AFUBES LETTER PEI # EI
+U+F1EC9 - AFUBES LETTER UA # F / U ; EF
+U+F1ECA - AFUBES LETTER JII # G
+U+F1ECB - AFUBES LETTER HA # H ; EICH
+U+F1ECC - AFUBES LETTER MI # I ; AE
+U+F1ECD - AFUBES LETTER MII # II
+U+F1ECE - AFUBES LETTER JEI # J
+U+F1ECF - AFUBES LETTER KA # K ; KEI
+U+F1ED0 - AFUBES LETTER MA # M ; NEM
+U+F1ED1 - AFUBES LETTER NA # N ; EN
+U+F1ED2 - AFUBES LETTER A # NG
+U+F1ED3 - AFUBES LETTER PII # P ; Traditional name PA, but to not conflict, the loan PII was chosen.
+U+F1ED4 - AFUBES LETTER RHA # RH ; UAA
+U+F1ED5 - AFUBES LETTER DA # S ; ES
+U+F1ED6 - AFUBES LETTER TA # T ; DII
+U+F1ED7 - AFUBES LETTER MU # U ; RHUU
+U+F1ED8 - AFUBES LETTER MUU # UU
+U+F1ED9 - AFUBES LETTER ZII # Z
+U+F1EDA - AFUBES LETTER PAPA # PÄ
+U+F1EDB - AFUBES LETTER PAMAE # PAE
+U+F1EDC - AFUBES LETTER PAAMA # PA
+U+F1EDD - AFUBES LETTER PAPE # PE
+U+F1EDE - AFUBES PUNCTUATION PERIOD ; Locally RHEMRHE
+U+F1EDF - AFUBES PUNCTUATION COMMA ; Locally RHEAA
 ```
