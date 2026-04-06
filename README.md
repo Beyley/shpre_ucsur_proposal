@@ -14,6 +14,11 @@ There are more dialects of Shpre that exist, and more related scripts, but these
 
 Outside of the lore, these languages are being actively used by the community for content. We're actively using this proposed block (currently unassigned in UCSUR) in our custom fonts and software.
 
+Community Fonts:
+
+- [Kamih Nah](https://discord.com/channels/1284943477984989258/1289355465658204210/1477822151250673787) - A Comic Sans inspired font for Nävein. Link goes to the Laghari Portals discord server.
+- Hekenic UCSUR/Unified Hekenic (Packaged with this proposal) - A font utilizing this proposal to implement all four Hekenic languages at once.
+
 While most content in the Hekenic languages is shared within the Laghari Portals discord server, here are some web-accessible links using the langauges:
 
 - [Laghari Calendars](https://laghari.beyleyisnot.moe/) - An implementation of the native Hekenic calendar. This would benefit from being able to mix the dialects of Shpre without having to change fonts constantly. A more modern rewrite available at [Beyley/liblaghari](https://github.com/Beyley/liblaghari), which also contains basic i18n tools for languages from Laghari Portals (Shpre included), and code to work with the Laghari Portals calendars and time systems.
