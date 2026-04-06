@@ -1,42 +1,43 @@
 # Hekenic Shpre (F1E00 - F1EFF)
 
-For ease of cross-reference with the [Laghari Portals website's documentation on the Hekenic languages](https://www.laghariportals.com/hekenic), parts of this proposal are phrased and referred to as if it is referring to real world times events that happened, rather than happening within the lore and worldbuilding of Laghari Portals (it's also just a bit of fun).
+For ease of cross-reference with the [Laghari Portals website's documentation on the Hekenic languages](https://www.laghariportals.com/hekenic), parts of this proposal are phrased and referred to as if it is referring to real world times events that happened, rather than happening within the lore and worldbuilding of Laghari Portals (it's also just a bit of fun to refer to it that way).
 
-It is recommended to at minimum go through the "Writing" section of the Laghari Portals documentaton on the Hekenic languages as a rough overview to know what to expect, however this document in places goes into more detail than the Laghari Portals website.
+While it is recommended to at minimum go through the "Writing" section of the Laghari Portals documentaton on the Hekenic languages as a rough overview to know what to expect, this document occasionally goes into more detail than the Laghari Portals website, using information from the language's creator.
 
-This proposal was primarily written by [Beyley Cardellio](https://beyleyisnot.moe/), with input from [Cyan](https://cyan.pet/), [ZeWei](https://www.zewei.xyz/) (the creator of the Shpre/Hekenic family of languages, these scripts, and Laghari Portals as a whole), and various others from the [Laghari Portals discord server](https://discord.gg/zewei).
+This proposal was primarily written by [Beyley Cardellio](https://beyleyisnot.moe/), with input from [Cyan](https://cyan.pet/), [ZeWei](https://www.zewei.xyz/) (the creator of the Shpre/Hekenic family of languages, these scripts, and Laghari Portals as a whole), and various other members of the [Laghari Portals discord server](https://discord.gg/zewei).
 
 ## The Hekenic Languages
 
-The Hekenic languages (known in Neptunian as Shpre, these terms are interchangable in this document) are a group of languages spoken in Dimension 66A. They're located on a large archipelago, have a common ancestor (Old Hekenic), and share similarities with eachother. While Nahnya (for Neptunian, Shpre Yhng), Nävein (for Martian, Shpre Nang), and Nunye (Modern Solar, Shpre Nya) all share a common ancestor writing system (a logography that is no longer used), they've diverged from each-other quite strongly, and all function very differently by the time of the Laghari Portals website documentation of the languages (October 2106). Äfubes is a much later invention for Future Solar, being standardized in 2191. The iteration of the Äfubes documented here is from October 2399.
+The Hekenic languages (known in Neptunian as Shpre, these terms are interchangable in this document) are a group of languages spoken in Dimension 66A. They're located on a large archipelago, have a common ancestor (Old Hekenic), and so share similarities with eachother. While Nahnya (for Neptunian, Shpre Yhng), Nävein (for Martian, Shpre Nang), and Nunye (Modern Solar, Shpre Nya) all share a common ancestor for their writing systems, a logography that is no longer used, they've all diverged from each-other and now function very differently. All the first three scripts are documented as they are used in October 2106. Äfubes, Future Solar's script, is a much later invention, being standardized in 2191. The iteration of the Äfubes documented here is from October 2399.
 
-There are more dialects of Shpre that exist, and more related scripts, but these do not have public documentation as of now (and are not complete usable languages being used by the community for content, unlike the currently documented Shpre dialects), and so are not included in this proposal. Earlier evolutions of the scripts from before October 2106 are also not included, due to not being documented in full. This proposal is a snapshot of how the scripts are actively used at the time the Laghari Portals website was written and the Laghari Portals ;; Worlds Tour videos take place.
+There are more dialects of Shpre that exist, and more related scripts, but these are not in a usable state, released publicly, and not used by the community. As such, the other dialects of Shpre are not included in this proposal. Earlier evolutions of the scripts from before October 2106 are also not included, due to a combination of not being documented in full and not being used by the community. This proposal is a snapshot of how the scripts are actively used at the time the Laghari Portals website was written and the Laghari Portals ;; Worlds Tour videos take place, which is what the community bases it's usage off of.
 
-Outside of the lore, these languages are being used actively by the community for content, and having a dedicated unicode block allows us to use these langauges within chat platforms such as Discord to communciate with each-other and more easily practice them, since there are multiple people learning to speak dialects of Shpre.
+Outside of the lore, these languages are being actively used by the community for content. We're actively using this proposed block (currently unassigned in UCSUR) in our custom fonts and software.
 
-Some examples of public content outside Discord using Shpre:
+While most content in the Hekenic languages is shared within the Laghari Portals discord server, here are some web-accessible links using the langauges:
 
 - [Laghari Calendars](https://laghari.beyleyisnot.moe/) - An implementation of the native Hekenic calendar. This would benefit from being able to mix the dialects of Shpre without having to change fonts constantly. A more modern rewrite available at [Beyley/liblaghari](https://github.com/Beyley/liblaghari), which also contains basic i18n tools for languages from Laghari Portals (Shpre included), and code to work with the Laghari Portals calendars and time systems.
 - [PEAK Neptunian](https://github.com/Beyley/PeakNeptunian) - A mod of the game PEAK which localizes the game into Neptunian. As of writing, the localization is ~50% complete. Being able to mix Neptunian and Latin characters is required to allow putting player usernames into strings right next to Neptunian text.
-- [myepraht](https://github.com/Beyley/myepraht) - A clone of Letroso for Neptunian, with hints based on the Nahnya syllabary, rather than the romanization of the words in question, so is tied quite strongly to the script itself.
+- [myepraht](https://github.com/Beyley/myepraht) - A clone of Letroso for Neptunian, with hints based on the Nahnya syllabary, rather than the romanization of the words in question, so is tied quite strongly to the script itself, although as of now uses the latin characters to represent the individual Nahnya characters.
+- [fcitx5-shpre](https://github.com/Beyley/fcitx5-shpre/) - An IME for the Hekenic Languages, currently only supports Nahnya.
 
 ## Nahnya
 
-The Neptunian syllabary, known locally as "Nahnya" (lit. Syllabary) is a mostly-pure syllabary, mapping almost 1:1 with the spoken sounds of the language, aside from syllable-final characters which are written separately. The character shapes are directly derived from an ancient logography, so there's not a pattern to derive the shapes of most characters.
+The Neptunian syllabary, known locally as "Nahnya" (lit. Syllabary) is a mostly-pure syllabary, mapping almost 1:1 with the spoken sounds of the language, aside from syllable-final characters which are written separately from the onset and nucleus. The character shapes are directly derived from an ancient logography, so there's not a pattern to derive the shapes of most characters.
 
 To form lone consonants for syllable-final sounds, a "Shortener" mark is placed after the `-H` form of the consonant. For example, to write `P` on it's own, you'd write that as `NAHNYA SYLLABLE PH, PAHNYA SIGN VIRAMA`.
 
 Nahnya has three levels of punctuation, Short, Medium, and Long. These are roughly equivalent to a comma, full stop, and end of paragrah in English.
 
-Traditionally, Nahnya is written without spaces, however doing so is more common as of 2106 due to influence from nearby languages and from English.
+Traditionally, Nahnya is written without spaces, however doing so is more common as of 2106 due to influence from nearby languages and from English. Both are valid.
 
 The syllables are encoded in the traditional ordering of the characters, to allow numerical codepoint sorting to match the expected order by speakers of the language.
 
 ### Exepctions
 
-As an exception to that, the `R` onset syllables are formed by adding a "silencer mark" to the respective `D` onset syllables. The position of the silencer mark is different per character, and linguistically it makes more sense to analyze these as separate characters. The silencer mark is the same as a "short" punctuation.
+As an exception to that, the `R` onset syllables are formed by adding a "silencer mark" to the respective `D` onset syllables. The position of the silencer mark is different per character, and linguistically it makes more sense to analyze these as separate characters (when sorting words they're considered separate). The silencer mark is the same shape as a "short" punctuation.
 
-The pairs `P/B`, `F/V`, `K/G`, and (syllabic `-H`) `-H/-AH` are considered allophonic to each-other, so no distinction is made in the writing system. Some sounds are written the same as other characters, since dedicated glyphs do not exist, the glyphs in question are listed below.
+The pairs `P/B`, `F/V`, `K/G`, and (syllabic `-H`) `-H/-AH` are considered allophonic to each-other, so no distinction is made in the writing system. Some sounds are written the same as other characters, since dedicated glyphs do not exist, those glyphs in question are listed below.
 
 - The syllable KYH is written as `NAHNYA SYLLABLE K, NAHNYA SYLLABLE YH` due to a lack of a character existing for that sound. This syllable is seen in words like `nwgyahk`.
 - `KI` is written `NGI`.
@@ -44,9 +45,9 @@ The pairs `P/B`, `F/V`, `K/G`, and (syllabic `-H`) `-H/-AH` are considered allop
 
 There are also a couple exceptions in the spelling, caused by language sound changes. Some of these syllable-final characters have other ways to be written, which is also considered valid in these cases, but these exceptions are seen as more correct as of 2106.
 
-- In syllable-final position, `T` after syllabic `H` may be written as `N`. This is the only place /t/ appears in the language.
-- In syllable-final position, `K` after syllabic `H` may be written as `NG`. Normally, this would be written as `NAHNYA SYLLABLE KH, NAHNYA SIGN VIRAMA`.
-- In syllable-final position, `P` after syllabic `H` may be written as `M`. Normally, this would be written as `NAHNYA SYLLABLE PH, NAHNYA SIGN VIRAMA`.
+- In syllable-final position, `T` after syllabic `H` may be written as `N`. This is the only place `/t/` appears in the language.
+- In syllable-final position, `K` after syllabic `H` may be written as `NG`. Normally, this would be encoded as `NAHNYA SYLLABLE KH, NAHNYA SIGN VIRAMA`.
+- In syllable-final position, `P` after syllabic `H` may be written as `M`. Normally, this would be encoded as `NAHNYA SYLLABLE PH, NAHNYA SIGN VIRAMA`.
 
 Some glyphs are also very similar to each-other, often written identically in handwriting, those pairs are listed here:
 
@@ -182,9 +183,9 @@ U+F1E72 - NAHNYA PUNCTUATION LONG
 
 ## Nävein
 
-The Martian alphabet, known locally as "Nävein", has 17 letters and is non-phonetic in modern Martian, due to sound changes.
+The Martian alphabet, known locally as "Nävein" (lit. Alphabet), has 17 letters and is non-phonetic in modern Martian, due to sound changes.
 
-Nävein has the same three levels of semantic punctuation as Nahnya, however they are written horizontally next to eachother as separate characters, rather than combined vertically as in Nahnya, and so longer pauses are encoded as multiple `NAVEIN PUNCTUATION` codepoints in direct sequence.
+Nävein has the same three levels of semantic punctuation as Nahnya, however they are written horizontally next to eachother as separate characters, rather than combined vertically as in Nahnya, and so longer pauses are encoded as multiple `NAVEIN PUNCTUATION` codepoints in direct sequence, akin to English FULL STOP.
 
 Nävein is written with spaces, and has multiple optional stylistic characters for when there are geminiates or clusters with R and Y. These styilistic characters bear no meaning on the pronunciation of the characters, and are best thought of as standardized ligatures, so they are not encoded and are instead encouraged to be implemented using ligatures based on the preferences of the font maker. See the [Laghari Portals](https://www.laghariportals.com/hekenic) website for what combining characters are standardized.
 
@@ -221,23 +222,19 @@ U+F1E91 - NAVEIN PUNCTUATION
 
 ## Nunye
 
-Nunye is best described as an Alphasyllabary, with base forms of consonants, marking vowels and certain clusters with diacritical marks. In some cases though, the diacritical marks have merged with the base character, leading to inconsistencies in the expected shapes for many letters. This document is encoding the form of Nunye as seen in 2106.
+Nunye is best described as an Alphasyllabary, with base forms for consonants, marking vowels and certain clusters with diacritical marks. In some cases though, the diacritical marks have merged with the base character, leading to inconsistencies in the expected shapes for many letters.
 
 ### Exceptions
 
-Due to Nunye being standardized in the past during the time of Old Solar, when analyzed in it's written form it tends to resemble Neptunian more than it does Modern Solar, this leads to a lot of spelling and pronunciation inconsistencies.
+Due to Nunye being standardized in the past during the time of Old Solar, when analyzed in it's written form it tends to resemble Neptunian more than it does Modern Solar, this leads to a lot of spelling and pronunciation inconsistencies, but none are relevant to the encoding choices.
 
-#### Added characters
+#### Recent additions
 
-Some sounds were not present when Nunye was standardized, however have since appeared in Solar's pronunciation, these characters are as follows:
+Some sounds were not present when Nunye was standardized, however have since appeared in Solar's pronunciation. While dedicated characters for these exist, they're often (but not always) replaced by other letters depending on the context. These characters are as follows:
 
 - TI - `NUNYE CONSONANT TA, NUNYE VOWEL SIGN MI`
 - TU1 - `NUNYE CONSONANT TA, NUNYE VOWEL SIGN MW`
 - YI - `NUNYE CONSONANT YA, NUNYE VOWEL SIGN MI`
-
-These characters are still used in Modern Solar, but are often replaced by other letters due to being missing when spelling was standardized.
-
-Codepoints are named after their local names in Modern Solar.
 
 ### Ordering
 
@@ -261,6 +258,8 @@ When ordering, descenders are considered part of the base consonant and are trea
 The order of the individual consonants and vowels is the same as present in the encoding, with the first consonants being `PA, MA, NA, ...` and the first vowels being `MI, MW, PA, ...`
 
 ### Proposed Encoding
+
+Codepoints are named after their local names in Modern Solar.
 
 All text after `#` represents the historical pronunciation when Nunye was standardized, and all text after `;` represents the name used on the [Laghari Portals](https://www.laghariportals.com/hekenic) website to describe this letter, if different. These are errata and are only present to aid in understanding, not part of the specification.
 
@@ -302,7 +301,7 @@ U+F1EB2 - NUNYE COMBINING DESCENDER Y
 
 #### Punctuation
 
-Nunye has the same three punctuations as Nahnya, and you can read about their usage above. Because the Nahnya punctuation glyph is anaylzed as the same glyph as the Silencer, the Nunye punctuation are encoded as separate codepoints rather than encoding a single shared `HEKENIC PUNCTUATION SHORT/MEDIUM/LONG` for both of them.
+Nunye has the same three punctuations as Nahnya, and you can read about their usage above. Because the Nahnya short punctuation glyph is anaylzed as the same glyph as the Silencer, the Nunye punctuation are encoded as separate codepoints rather than encoding a single shared `HEKENIC PUNCTUATION SHORT/MEDIUM/LONG` for both of them, to allow font makers to visually distinguish between Nahnya silencer and Nunye punctuation, if wanted.
 
 ```
 U+F1EB3 - NUNYE PUNCTUATION SHORT
@@ -312,16 +311,16 @@ U+F1EB5 - NUNYE PUNCTUATION LONG
 
 ## Äfubes
 
-The Future Solar alphabet, known locally as Äfubes, is a nearly-phonetic alphabet used to encode Future Solar, an evolution of Modern Solar from the year 2399, with heavy influence from English and the Latin Alphabet. One of it's main goals was to make it possible to write the script without ligatures, compared to Modern Solar which needs uses lots of them, so that usage on a computer is easier. This is reflected in the encoding, using one codepoint per letter.
+The Future Solar alphabet, known locally as Äfubes, is a nearly-phonetic alphabet used to encode Future Solar, an evolution of Modern Solar from the year 2399, with heavy influence from English and the Latin Alphabet. One of it's main goals was to make it possible to write the script without ligatures. This is reflected in the encoding, using one codepoint per letter.
 
-Äfubes has 28 letters officially, however there are 2 uncommon letters (that do see minor use) and so are included in the encoding, even if it is not standard practice to use these. They are listed as follows:
+Äfubes has 28 letters officially, however there are additionally 2 uncommon letters (that do see minor use) and so are included in the encoding, even if their use is not considered standard practice. They are listed as follows:
 
 - `AFUBES LETTER UU` - This is a long form of the of `U` vowel.
-- `AFUBES LETTER PAE` - Refer to the section on the [Pä-Pa-Pe Controversy](https://www.laghariportals.com/hekenic) on the Laghari Portals website for why this glyph was originally created.
+- `AFUBES LETTER PAE` - Refer to the section on the [Pä-Pa-Pe Controversy](https://www.laghariportals.com/hekenic) on the Laghari Portals website for why this glyph was originally created and may be used.
 
 While characters like `PÄ`, `PAE`, `PA`, and `PE` are sometimes referred to as ligatures, their usage effects the ordering of words, and so are listed as separate codepoints, with the user's IME autocompleting them in when the user types the separate characters. Codepoints are all listed in their standard ordering, so sorting by codepoint will sort by letter.
 
-Some letters have multiple names, one for the native name, and one named loaned from English, this encoding uses the native name where possible, using loans to distinguish where not normally possible without the letter `Ä`.
+[Some letters have multiple names](https://discord.com/channels/1284943477984989258/1289355465658204210/1480337535732551954), one for the native name, and one named loaned from English, this encoding uses the native name where possible, using loans to distinguish where not normally possible without the letter `Ä`.
 
 ### Proposed Encoding
 
